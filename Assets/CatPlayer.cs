@@ -25,12 +25,31 @@ public class CatPlayer : MonoBehaviour
                 ,transform.position.z + 3f*Time.deltaTime
                 );
         }
-        if(Input.GetKey(KeyCode.DownArrow)){
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
             Debug.Log("뒤로~");
             transform.position = new Vector3(
                 transform.position.x
-                ,transform.position.y
-                ,transform.position.z - 3f*Time.deltaTime
+                , transform.position.y
+                , transform.position.z - 3f * Time.deltaTime
+                );
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Debug.Log("좌로~");
+            transform.position = new Vector3(
+                transform.position.x - 3f * Time.deltaTime
+                , transform.position.y
+                , transform.position.z
+                );
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Debug.Log("우로~");
+            transform.position = new Vector3(
+                transform.position.x + 3f * Time.deltaTime
+                , transform.position.y
+                , transform.position.z
                 );
         }
     }
