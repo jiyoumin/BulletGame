@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody playerRigidbody;
+    public Rigidbody PlayerRigidbody;
     public float speed = 8f;
 
     void Start()
     {
-        playerRigidbody = GetComponent<Rigidbody>();
+        PlayerRigidbody = GetComponent<Rigidbody>();
 
     }
 
@@ -24,11 +24,15 @@ public class PlayerController : MonoBehaviour
 
         Vector3 newVelocity = new Vector3(xSpeed, 0f, zSpeed);
 
-        playerRigidbody.velocity = newVelocity;
+        PlayerRigidbody.velocity = newVelocity;
 
     }
     public void Die()
     {
         gameObject.SetActive(false);
+
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.EndGame();
     }
+
 }
